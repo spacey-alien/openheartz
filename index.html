@@ -160,7 +160,7 @@
     <div id="lockscreen" class="glass-card">
       <h1>🔒 OPENHEART</h1>
       <p class="subtitle">Only for Nithya 💖</p>
-      <input type="password" id="passcode" placeholder="Enter passcode (only for her)" />
+      <input type="password" id="passcode" placeholder="Enter passcode (143)" />
       <button onclick="unlock()">Unlock 💫</button>
       <p id="error" class="error-msg"></p>
     </div>
@@ -178,7 +178,7 @@
           <input type="radio" name="mood" value="😡" id="angry"><label for="angry">😡</label>
           <input type="radio" name="mood" value="🥺" id="plead"><label for="plead">🥺</label>
           <input type="radio" name="mood" value="😔" id="tired"><label for="tired">😔</label>
-          <input type="radio" name="mood" value="😘" id="sleepy"><label for="sleepy">😘</label>
+          <input type="radio" name="mood" value="💖" id="lovely"><label for="lovely">💖</label>
         </div>
 
         <label>💡 How can I fix it?</label>
@@ -249,11 +249,14 @@ Generated via OPENHEART 💌
       const params = new URLSearchParams(window.location.search);
       const ticket = params.get("ticket");
       if (ticket) {
+        const decoded = decodeURIComponent(ticket);
         document.body.innerHTML = `
           <div class="container">
-            <div class="glass-card ticket">
-              <h2>📨 Love Ticket</h2>
-              <pre>${decodeURIComponent(ticket)}</pre>
+            <div class="glass-card">
+              <h2 style="text-align:center;">📨 Love Ticket</h2>
+              <div class="ticket">
+                <pre style="white-space:pre-wrap; word-wrap:break-word; font-size:1rem;">${decoded}</pre>
+              </div>
             </div>
           </div>
         `;
